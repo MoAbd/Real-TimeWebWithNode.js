@@ -5,16 +5,24 @@ function printHelp(){
 	console.log("");
 	console.log("usage:");
 	console.log("--help            print this help");
-	console.log("--name={NAME}     print Hello {NAME}");
+	console.log("--file={NAME}     read the file of {NAME}");
 	console.log("");
 }
 
-var args = require("minimist")(process.argv.slice(2),{ string: "name"});
+var args = require("minimist")(process.argv.slice(2),{ string: "file"});
 
-if (args.help || !args.name){
+if (args.help || !args.file){
 	printHelp();
 	process.exit(1)
 }
-var name = args.name;
 
-console.log('Hello ' + name);
+var hello= require("./helloworld.js");
+var contents = hello.say(args.file,function(err, contents){
+	if (err) {
+		console.log("Error: " + err);
+	}else{
+		console.log(contents.toString());
+	}
+	
+});
+
