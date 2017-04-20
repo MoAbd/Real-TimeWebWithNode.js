@@ -42,10 +42,12 @@
 
 	socket.on("hello",hello);
 	socket.on("broadcast",broadcast);
+	socket.on("spy",spy);
 
 	$(document).bind("mousemove",function(evt){
 		// evt.pageX, evt.pageY
-	})
+		socket.emit("spy",evt.pageX,evt.pageY);
+	});
 
 	document.getElementById("dobroadcast").addEventListener(
 		"click",
