@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>7.html</title>
+</head>
+<body>
+<h1>7.html</h1>
+<p id="hello"></p>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+	
+	var socket = io();
+	socket.on("hello",function (num) {
+		document.getElementById("hello").innerHTML = "Hello World: " + num ;
+	});
+</script>
+</body>
+</html>
