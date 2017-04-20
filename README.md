@@ -5,6 +5,6 @@ My solutions for Real-Time Web With Node.js course Exercises on [Pluralsight](ht
 
 ### Tabe of content:
  - [x] HTML5 APIs 
- - [ ] Node.js    
- - [ ] Socket.io  
+ - [x] Node.js    
+ - [x] Socket.io  
  - [ ] WebRTC     
